@@ -33,3 +33,15 @@ $this->load->view('layouts/header');
 <?php
 $this->load->view('layouts/footer');
 ?>
+<script>
+var table = new DataTable('#DT', {
+	"dom": 'B<"float-left"i><"float-right"f>t<"float-left"l><"float-right"p><"clearfix">',
+	buttons: [
+		'excel', 'pdf', 'print'
+	],
+   "responsive": false,
+	language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+    },
+});
+</script>
