@@ -29,7 +29,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</li>		
 				
 				<li class="nav-item">
-					<a class="nav-link" href="/facturas">Facturas</a>
+					<a class="nav-link" href="/factura">Facturas</a>
 				</li>				
 			</ul>
 		</div>

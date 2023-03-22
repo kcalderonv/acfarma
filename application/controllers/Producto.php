@@ -25,6 +25,24 @@ class Producto extends CI_Controller
 		echo json_encode($data);
 	}
 
+	public function select()
+	{
+		$this->db->order_by('codigo');
+		$query = $this->db->get('producto');
+
+		$data = array();
+      foreach ($query->result() as $reg) {
+			$data[] = array(
+				'value' => $reg->id_producto,
+				'text' => $reg->codigo.'-'.$reg->descripcion.'. Precio: S/'.$reg->precio,
+				'descripcion' => $reg->descripcion,
+				'precio' => $reg->precio,
+				'codigo' => $reg->codigo,
+			);
+		}
+		echo json_encode($data);
+	}
+
 	public function store()
 	{
 		$json = array('ok' => true, 'msg' => 'producto guardado exitosamente');

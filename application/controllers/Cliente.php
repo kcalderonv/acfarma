@@ -9,6 +9,21 @@ class Cliente extends CI_Controller
 		$this->load->view('cliente');
 	}
 
+	public function select()
+	{
+		$this->db->order_by('dni');
+		$query = $this->db->get('cliente');
+
+		$data = array();
+      foreach ($query->result() as $reg) {
+			$data[] = array(
+				'value' => $reg->id_cliente,
+				'text' => $reg->dni.'-'.$reg->nombres
+			);
+		}
+		echo json_encode($data);
+	}
+
 	public function listar()
 	{
 		$query = $this->db->get('cliente');
